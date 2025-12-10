@@ -25,18 +25,18 @@ const Index = () => {
       <Navbar isConnected={isConnected} />
 
       <main className="flex-1 flex p-4 gap-4 min-h-0">
-        {/* Logs - Left Side */}
-        <div className="w-1/3 min-w-[280px] max-w-[400px]">
-          <LogsPanel logs={logs} onClearLogs={clearLogs} />
-        </div>
-
-        {/* Camera Feed - Right Side */}
+        {/* Camera Feed - Left Side */}
         <div className="flex-1">
           <CameraFeed
             cameraId={activeCamera}
             streamUrl={streamUrl}
             isConnected={isConnected}
           />
+        </div>
+
+        {/* Logs - Right Side */}
+        <div className="w-1/3 min-w-[280px] max-w-[400px]">
+          <LogsPanel logs={logs} onClearLogs={clearLogs} />
         </div>
       </main>
 
