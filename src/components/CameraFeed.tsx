@@ -25,7 +25,7 @@ const CameraFeed = ({ cameraId, streamUrl, isConnected }: CameraFeedProps) => {
   };
 
   return (
-    <div className="glass-card rounded-xl overflow-hidden animate-slide-up">
+    <div className="glass-card rounded-xl overflow-hidden animate-slide-up h-full flex flex-col">
       <div className="flex items-center justify-between px-4 py-3 border-b border-border">
         <div className="flex items-center gap-3">
           <div className="p-1.5 rounded-md bg-primary/10">
@@ -51,7 +51,7 @@ const CameraFeed = ({ cameraId, streamUrl, isConnected }: CameraFeedProps) => {
 
       <div
         id="camera-container"
-        className="relative aspect-video bg-muted/50 overflow-hidden"
+        className="relative flex-1 bg-muted/50 overflow-hidden"
       >
         {streamUrl && isConnected ? (
           <>

@@ -66,7 +66,7 @@ const LogsPanel = ({ logs, onClearLogs }: LogsPanelProps) => {
   };
 
   return (
-    <div className="glass-card rounded-xl overflow-hidden animate-slide-up" style={{ animationDelay: "0.2s" }}>
+    <div className="glass-card rounded-xl overflow-hidden animate-slide-up h-full flex flex-col" style={{ animationDelay: "0.2s" }}>
       <div className="flex items-center justify-between px-4 py-3 border-b border-border">
         <div className="flex items-center gap-2">
           <Terminal className="w-4 h-4 text-primary" />
@@ -95,7 +95,7 @@ const LogsPanel = ({ logs, onClearLogs }: LogsPanelProps) => {
 
       <div
         ref={logsRef}
-        className="h-48 overflow-y-auto p-3 bg-muted/30 font-mono text-xs space-y-1"
+        className="flex-1 overflow-y-auto p-3 bg-muted/30 font-mono text-xs space-y-1"
       >
         {logs.length === 0 ? (
           <p className="text-muted-foreground text-center py-4">
