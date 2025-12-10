@@ -21,21 +21,26 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-screen flex flex-col overflow-hidden">
       <Navbar isConnected={isConnected} />
 
-      <main className="flex-1 flex items-start justify-center p-4 md:p-6 lg:p-8">
-        <div className="w-full max-w-5xl space-y-4 md:space-y-6">
+      <main className="flex-1 flex p-4 gap-4 min-h-0">
+        {/* Logs - Left Side */}
+        <div className="w-1/3 min-w-[280px] max-w-[400px]">
+          <LogsPanel logs={logs} onClearLogs={clearLogs} />
+        </div>
+
+        {/* Camera Feed - Right Side */}
+        <div className="flex-1">
           <CameraFeed
             cameraId={activeCamera}
             streamUrl={streamUrl}
             isConnected={isConnected}
           />
-          <LogsPanel logs={logs} onClearLogs={clearLogs} />
         </div>
       </main>
 
-      <footer className="glass-card border-t border-border px-4 md:px-6 py-3 md:py-4 mt-auto">
+      <footer className="glass-card border-t border-border px-4 py-2 shrink-0">
         <div className="max-w-5xl mx-auto flex items-center justify-between text-xs text-muted-foreground">
           <span>Camera Monitoring System v1.0</span>
           <span className="hidden sm:inline">
